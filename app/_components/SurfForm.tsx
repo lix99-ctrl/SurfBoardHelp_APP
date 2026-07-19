@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import type { UserProfile, Surfboard } from "../_lib/types";
 import { recommendBoard } from "../_lib/recommend";
