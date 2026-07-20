@@ -41,6 +41,7 @@ export function BoardMatchScoreTag({ board, user }: MatchProps) {
 export default function BoardCard({ board, user }: BoardCardProps) {
   return (
     <div className="border rounded shadow-sm p-4 flex flex-col gap-2 bg-white">
+      <div className="font-bold text-lg">{board.brand}</div>
       <div className="font-bold text-lg">{board.model}</div>
       <div className="text-gray-700 text-sm">
         Volume: <span className="font-mono">{board.volume}L</span>
