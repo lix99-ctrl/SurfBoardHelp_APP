@@ -38,6 +38,20 @@ export function BoardMatchScoreTag({ board, user }: MatchProps) {
   );
 }
 
+// --- 4. Add "Check Price / Buy Now" affiliate button to BoardCard ---
+
+export function AffiliateButton({ url }: { url: string }) {
+  return (
+    <a
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-block mt-2 px-4 py-2 bg-blue-600 text-white rounded font-bold text-sm hover:bg-blue-700 transition"
+    >
+      Check Price / Buy Now
+    </a>
+  );
+
 export default function BoardCard({ board, user }: BoardCardProps) {
   return (
     <div className="border rounded shadow-sm p-4 flex flex-col gap-2 bg-white">
@@ -53,6 +67,9 @@ export default function BoardCard({ board, user }: BoardCardProps) {
         <div className="mt-2">
           <BoardMatchScoreTag board={board} user={user} />
         </div>
+      )}
+      {board.affiliateUrl && (
+        <AffiliateButton url={board.affiliateUrl} />
       )}
     </div>
   );
